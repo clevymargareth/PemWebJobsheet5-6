@@ -1,16 +1,15 @@
-// Fetch & render the Member List asynchronously from data/members.json
 async function loadMemberList() {
     const tbody = document.querySelector(".table-responsive table tbody");
     const loading = document.getElementById("loading-indicator");
     if (!tbody) return;
 
-    loading.style.display = "block";
+    if (loading) loading.style.display = "block";
     tbody.innerHTML = "";
 
     try {
-        await new Promise((resolve) => setTimeout(resolve, 600));
+        await new Promise((resolve) => setTimeout(resolve, 3000));
 
-        const res = await fetch("../data/members.json");
+        const res = await fetch("../data/member.json"); // <-- Diubah dari members.json ke member.json
         if (!res.ok) {
             throw new Error("Failed to fetch data (status " + res.status + ")");
         }
@@ -33,7 +32,7 @@ async function loadMemberList() {
         tbody.innerHTML =
             "<tr><td colspan=\"5\">Failed to load data: " + err.message + "</td></tr>";
     } finally {
-        loading.style.display = "none";
+        if (loading) loading.style.display = "none";
     }
 }
 

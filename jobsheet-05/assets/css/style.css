@@ -236,7 +236,7 @@ footer {
         }
     }
 }
-}
+
 
 /* Mobile */
 @media (max-width: 480px) {
@@ -248,11 +248,14 @@ footer {
         display: block;
     }
 
-    header nav {
-        display: none;
+   header nav {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
         width: 100%;
         order: 3;
-        margin-top: 1rem;
+        margin-top: 0;
+        transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
     }
 
     header nav.nav-open {

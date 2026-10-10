@@ -33,7 +33,8 @@ function initTableFilter() {
         const keyword = input.value.toLowerCase();
         const rows = table.querySelectorAll("tbody tr");
         rows.forEach(function (row) {
-            const text = row.textContent.toLowerCase();
+            const firstCell = row.querySelector("td");
+            const text = firstCell ? firstCell.textContent.toLowerCase() : "";
             row.style.display = text.includes(keyword) ? "" : "none";
         });
     });
@@ -97,6 +98,21 @@ function initFormValidation() {
                 valid = false;
             } else {
                 removeError(stock);
+            }
+        }
+
+        const ISBN = form.querySelector("[name='isbn']");
+        if (ISBN) {
+            const ISBNValue = ISBN.value.trim();
+            const isbnPattern = /^[0-9-]+$/;
+            if (ISBNValue === "") {
+                showError(ISBN, "ISBN is required.");
+                valid = false;
+            } else if (!isbnPattern.test(ISBNValue)) {
+                showError(ISBN, "ISBN must contain only digits and hyphens.");
+                valid = false;
+            } else {
+                removeError(ISBN);
             }
         }
 

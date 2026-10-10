@@ -1,12 +1,12 @@
 [
-    { "title": "Laskar Pelangi", "author": "Andrea Hirata", "year": 2005, "stock": 4 },
-    { "title": "Bumi Manusia", "author": "Pramoedya Ananta Toer", "year": 1980, "stock": 2 },
-    { "title": "Negeri 5 Menara", "author": "Ahmad Fuadi", "year": 2009, "stock": 0 },
-    { "title": "Filosofi Teras", "author": "Henry Manampiring", "year": 2018, "stock": 5 },
-    { "title": "Ronggeng Dukuh Paruk", "author": "Ahmad Tohari", "year": 1982, "stock": 1 },
-    { "title": "Cantik Itu Luka", "author": "Eka Kurniawan", "year": 2002, "stock": 3 },
-    { "title": "Pulang", "author": "Tere Liye", "year": 2015, "stock": 2 },
-    { "title": "Sang Pemimpi", "author": "Andrea Hirata", "year": 2006, "stock": 6 },
-    { "title": "Perahu Kertas", "author": "Dee Lestari", "year": 2009, "stock": 0 },
-    { "title": "Gadis Kretek", "author": "Ratih Kumala", "year": 2012, "stock": 4 }
+    { "isbn": "978-979-3062-79-2", "title": "Laskar Pelangi", "author": "Andrea Hirata", "year": 2005, "stock": 4, "category": "Novel" },
+    { "isbn": "978-979-461-717-5", "title": "Bumi Manusia", "author": "Pramoedya Ananta Toer", "year": 1980, "stock": 2, "category": "Sejarah" },
+    { "isbn": "978-979-22-4987-3", "title": "Negeri 5 Menara", "author": "Ahmad Fuadi", "year": 2009, "stock": 0, "category": "Novel" },
+    { "isbn": "978-602-03-8889-1", "title": "Filosofi Teras", "author": "Henry Manampiring", "year": 2018, "stock": 5, "category": "Filsafat" },
+    { "isbn": "978-979-22-3580-7", "title": "Ronggeng Dukuh Paruk", "author": "Ahmad Tohari", "year": 1982, "stock": 1, "category": "Novel" },
+    { "isbn": "978-602-06-3358-8", "title": "Cantik Itu Luka", "author": "Eka Kurniawan", "year": 2002, "stock": 3, "category": "Novel" },
+    { "isbn": "978-602-03-3295-5", "title": "Pulang", "author": "Tere Liye", "year": 2015, "stock": 2, "category": "Novel" },
+    { "isbn": "978-979-3062-92-1", "title": "Sang Pemimpi", "author": "Andrea Hirata", "year": 2006, "stock": 6, "category": "Novel" },
+    { "isbn": "978-602-03-1283-4", "title": "Perahu Kertas", "author": "Dee Lestari", "year": 2009, "stock": 0, "category": "Novel" },
+    { "isbn": "978-602-03-8325-4", "title": "Gadis Kretek", "author": "Ratih Kumala", "year": 2012, "stock": 4, "category": "Sejarah" }
 ]

@@ -104,6 +104,21 @@ function initFormValidation() {
             }
         }
 
+        const ISBNInput = document.querySelector("#isbn"); 
+        if (isbnInput) {
+            const isbnValue = isbnInput.value.trim();
+    
+            const isbnPattern = /^[0-9-]+$/;
+
+        if (ISBNalue === "") {
+                showError(isbnInput, "ISBN tidak boleh kosong.");
+            } else if (!isbnPattern.test(isbnValue)) {
+                showError(isbnInput, "ISBN hanya boleh berisi angka dan tanda hubung (-).");
+            } else {
+                clearError(isbnInput);
+            }
+        }
+
         if (!valid) {
             e.preventDefault();
         }

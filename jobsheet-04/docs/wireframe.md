@@ -98,7 +98,67 @@ The existing pages (Home, Add/List Books, Add/List Members — Jobsheets 1-3) do
 +--------------------------------------+
 ```
 
+## Wireframe: Register New Member Page
+
++-------------------------------------------------------------+
+| SIMPUS-Mini                          [Home] [Login]         |
++-------------------------------------------------------------+
+|                                                             |
+|  ## Register New Member                                     |
+|  Fill out the form below to register as a new library member|
+|                                                             |
+|  +-------------------------------------------------------+  |
+|  | Full Name:                                            |  |
+|  | [ Enter your full name...                           ] |  |
+|  +-------------------------------------------------------+  |
+|                                                             |
+
+|  +-------------------------------------------------------+  |
+|  | Email Address:                                        |  |
+|  | [ Enter your email...                               ] |  |
+|  +-------------------------------------------------------+  |
+|                                                             |
+
+|  +-------------------------------------------------------+  |
+|  | Phone Number:                                         |  |
+|  | [ Enter your phone number...                        ] |  |
+|  +-------------------------------------------------------+  |
+|                                                             |
+
+|  +-------------------------------------------------------+  |
+|  | Address:                                              |  |
+|  | [ Enter your address...                             ] |  |
+|  +-------------------------------------------------------+  |
+|                                                             |
+
+|  [ Cancel ]                  [ Submit Registration ]        |
+|                                                             |
++-------------------------------------------------------------+
+
+
+## User Flow — Overdue Members Search
+
+[Dashboard] -> [Select "Members" menu] -> [Click "Overdue Filter"]
+        -> [System displays list of members with late returns]
+        -> [Select specific member] -> [View overdue details & fines]
+
 ## Consistency with Existing Design
 - Accent colors, navbar typography, and table/card styles follow `assets/css/style.css` built in Jobsheets 2-3.
 - Navbar will add a **Borrowing** menu and login status indicator (officer name / Logout button) starting implementation in Jobsheet 10.
 - Edge cases to handle during implementation: books with zero stock cannot be selected in borrowing forms; members with overdue fees are validated in Jobsheet 12 (independent assignment).
+
+## Additional Edge Cases
+
+1. **Duplicate Active Borrowing:**
+   - *Scenario:* What happens if the librarian tries to lend the same book to the same member twice in a row while the first loan is still active?
+   - *System Action:* The system should block the transaction and show an error message: *"Member already has an active loan for this book."*
+
+2. **Exceeding Maximum Loan Limit:**
+   - *Scenario:* What happens if a member has already reached the maximum limit of borrowed books (e.g., 3 books) and tries to borrow another one?
+   - *System Action:* The system should prevent selection and display a warning: *"Maximum borrowing limit reached."*
+
+3. **Returning an Already Returned Book:**
+   - *Scenario:* What happens if an officer accidentally clicks the "Return" button twice for the same transaction?
+   - *System Action:* The system should disable the button or show a notice that the book has already been marked as returned.
+
+
