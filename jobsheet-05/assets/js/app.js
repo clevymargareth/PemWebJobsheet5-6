@@ -26,19 +26,29 @@ function initDeleteConfirm() {
 // ===== Real-time table filter/search =====
 function initTableFilter() {
     const input = document.getElementById("search-input");
-    const table = document.querySelector(".table-responsive table");
+    const table = document.querySelectorAll(".table-responsive table");
     if (!input || !table) return;
 
     input.addEventListener("keyup", function () {
         const keyword = input.value.toLowerCase();
         const rows = table.querySelectorAll("tbody tr");
         rows.forEach(function (row) {
-            const firstCell = row.querySelector("td");
-            const text = firstCell ? firstCell.textContent.toLowerCase() : "";
-            row.style.display = text.includes(keyword) ? "" : "none";
+            const tds = row.querySelectorAll("td");
+            const titleCell = tds[1] ? tds[1] : tds[0];
+
+            if (titleCell) {
+                const text = titleCell.textContent.toLowerCase();
+               if (text.includes(keyword)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }        
+            }
         });
     });
 }
+
+
 
 // ===== Form validation (client-side) =====
 function showError(input, message) {
@@ -101,18 +111,18 @@ function initFormValidation() {
             }
         }
 
-        const ISBN = form.querySelector("[name='isbn']");
-        if (ISBN) {
-            const ISBNValue = ISBN.value.trim();
+        const isbn = form.querySelector("[name='isbn']");
+        if (isbn) {
+            const isbnValue = isbn.value.trim();
             const isbnPattern = /^[0-9-]+$/;
-            if (ISBNValue === "") {
-                showError(ISBN, "ISBN is required.");
+            if (isbnValue === "") {
+                showError(isbn, "ISBN is required.");
                 valid = false;
-            } else if (!isbnPattern.test(ISBNValue)) {
-                showError(ISBN, "ISBN must contain only digits and hyphens.");
+            } else if (!isbnPattern.test(isbnValue)) {
+                showError(isbn, "ISBN must contain only digits and hyphens(-).");
                 valid = false;
             } else {
-                removeError(ISBN);
+                removeError(isbn);
             }
         }
 

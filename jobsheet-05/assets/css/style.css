@@ -260,6 +260,8 @@ footer {
 
     header nav.nav-open {
         display: block;
+        max-height: 200px; 
+        margin-top: 1rem;
     }
 
     header nav ul {
